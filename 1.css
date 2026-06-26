@@ -1,80 +1,111 @@
+@font-face {
+    font-family: 'myfont';
+    src: url(./UhBee\ Kang-Ja.ttf);
+}
+
+@font-face {
+    font-family: 'myfont-bold';
+    src: url(./UhBee\ Kang-Ja\ Bold.ttf);
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: 'myfont';
 }
 
 body{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    flex-direction: column;
+
+    height: 100vh;
 }
 
-ul{
-    list-style: none;
-}
 
 .box{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 700px;
+
+    padding: 90px 180px;
+
+    background-image: url(./메모지.png);
+    background-position: center;
+    background-size: cover;
+
+    transform: scale(0.8);
 }
 
-.text{
-    text-align: center;
-    margin: 15px;
-    font-size: 20px;
-    font-weight: bold;
+h1{
+    margin-bottom: 20px;
+
+    color: #333;
 }
 
-.item{
-    margin-bottom: 10px;
-}
-
-input{
-    padding: 5px 10px;
-    border-radius: 10px;
-    border: none;
-    background-color: #cde7ff;
-}
-
-select{
-    padding: 5px 10px;
-    border-radius: 10px;
-    border: none;
-    background-color: #cde7ff;
-    color: #2660ff;
-}
-
-button{
-    padding: 5px 10px;
-    border: none;
-    background-color: #69b9ff;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #fff;
-    cursor: pointer;
-}
-
-button:hover{
-    background-color: #5598d3;
-}
-
-#adds li{
-    background-color: #e0f0ff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+.wrap{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    padding:  10px;
+    margin: 10px;
+
+    transform: translateY(25px);
+}
+
+#Point{
+    margin-bottom: 10px;
+
+    background-color: transparent;
+
+    padding: 5px 40px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    border-radius: 30px;
+}
+
+#Word{
+    display: block;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    font-size: 30px;
+    font-weight: 700;
     text-align: center;
+
+    margin-bottom: 40px;
 }
 
-.d{
-    font-size: 13px;
-    color: #777777;
+#typing{
+    padding: 10px 20px;
+    margin: 15px;
+
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: none;
+    color: #ff7300;
+
+    text-align: center;
+
+    font-size: 35px;
+    font-weight: 700;
 }
 
-.u .t {
-    font-size: 15px;
-    font-weight: 500;
+#typing::placeholder{
+    color: #ff7300;
 }
