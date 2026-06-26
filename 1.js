@@ -1,52 +1,62 @@
-const urgency = document.getElementById('urgency');
-const day = document.getElementById('day');
-const type = document.getElementById('type');
-const btn = document.getElementById('btn');
-const adds = document.getElementById('adds');
-const alldel = document.getElementById('alldel');
+const Point = document.getElementById('Point');
+const Word = document.getElementById('Word');
+const typing = document.getElementById('typing');
 
-const arrary = []
+let p = 0;
 
-function add() {
-    const vday = day.value
-    const vurgency = urgency.value
-    const vtype = type.value
+const list = [
+    "고양이",
+    "강아지",
+    "곰",
+    "햄스터",
+    "뱀",
+    "고릴라",
+    "여우",
+    "코끼리",
+    "티라노사우르스",
+    "거북이",
+    "브라키오사우르스",
+    "퉁퉁퉁퉁퉁퉁퉁퉁퉁사후르",
+    "스테고사우르스",
+    "고라니",
+    "돼지",
+    "젖소",
+    "사자",
+    "호랑이",
+    "파파고",
+    "가오리",
+    "오리",
+    "해파리",
+    "닭"
+];
 
-    //html 추가
-    const tli = document.createElement('li');
-    //내부 html 변경
-    tli.innerHTML =
-     `<p class="d">${vday}</p>
-     <p class="u">${vurgency}</p>
-     <p class="t">${vtype}</p>
-     `
-    
-     arrary.push({
-        vday:vday,
-        vurgency:vurgency,
-        vtype:vtype,
-     })
-     //삭제 버튼 추가
-     const dlbtn = document.createElement('button');
-     dlbtn.textContent = "삭제"
-     tli.appendChild(dlbtn)
 
-     //부분 삭제
-    adds.appendChild(tli)
 
-    dlbtn.addEventListener('click', ()=>{
-        tli.remove()
-    })
 
-    console.log(arrary);
-    
-} 
 
-//전제 삭제
-alldel.addEventListener('click',()=>{
-    adds.innerHTML = ""
-    arrary = []
+
+function showtext() {
+    let randoms = Math.floor(Math.random() * list.length);
+
+    Word.textContent = list[randoms]
+
+    Point.textContent = `점수 : ${p}`
+}
+
+showtext();
+
+
+document.addEventListener("keydown", (e) => {
+    if (e.key == "Enter") {
+
+        if (Word.textContent == typing.value) {
+
+            p += 1
+            typing.value = "";
+            showtext()
+        }
+
+    }
+
+    console.log(e.key)
 })
-
-
-btn.addEventListener('click',add)
